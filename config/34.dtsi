@@ -30,8 +30,8 @@
 #define FUNC(k1) &lt 3 k1
 #define CFG(k1) &lt 4 k1
 
-#define MEH(k1) &ht LC(LA(LS)) k1
-#define HYPER(k1) &ht LC(LA(LS(LG))) k1
+#define MEH(k1) &ht LC(LA(LSHFT)) k1
+#define HYPER(k1) &ht LC(LA(LS(LGUI))) k1
 
 // alt/opt
 #define LAT(k1) &ht LALT k1
