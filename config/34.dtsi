@@ -29,6 +29,9 @@
 #define SYM(k1) &lt 2 k1
 #define CFG(k1) &lt 3 k1
 
+// TODO:
+// #define HYPER()
+
 // alt/opt
 #define LAT(k1) &ht LALT k1
 #define RAT(k1) &ht RALT k1
@@ -133,6 +136,26 @@
                 , <&macro_release &kp RGUI>
                 ;
         };
+        s_app: s_app {
+            label = "switch_app";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <1>;
+            bindings
+                = <&macro_press &kp RGUI>
+                , <&macro_tap &kp TAB>
+                , <&macro_release &kp RGUI>
+                ;
+        };
+        s_ctx: s_ctx {
+            label = "switch_context";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <2>;
+            bindings
+                = <&macro_press &kp RGUI>
+                , <&macro_tap &kp GRAVE>
+                , <&macro_release &kp RGUI>
+                ;
+        };
     };
 
 //############################################################################################################
@@ -160,11 +183,11 @@
         numbers {
             bindings = <
 //+---------+---------+---------+---------+---------+/*  */+---------+---------+---------+---------+---------+
-   &kp N1    &kp N2    &kp N3    &kp MINUS &kp STAR  /*  */ &kp HOME  &kp PG_DN &kp PG_UP &kp END   &none
+   &kp TAB   &kp N1    &kp N2    &kp N3    &kp N0    /*  */ &kp HOME  &kp PG_DN &kp PG_UP &kp END    &kp DEL
 //+---------+---------+---------+---------+---------+/*  */+---------+---------+---------+---------+---------+
-   &kp N4    &kp N5    &kp N6    &kp PLUS  &kp SLASH /*  */ &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &none
+   &kp LCTRL &kp N4    &kp N5    &kp N6    <&s_app>  /*  */ &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &kp RCTRL
 //+---------+---------+---------+---------+---------+/*  */+---------+---------+---------+---------+---------+
-   &kp N7    &kp N8    &kp N9    &kp N0    &kp DOT   /*  */ &none     HG(DOWN)  HG(UP)    &none     &none
+   &kp LSHFT &kp N7    &kp N8    &kp N9    <&s_ctx>  /*  */ &kp MINUS &kp PLUS  &kp STAR  &kp SLASH  &kp DOT
 //+---------+---------+---------+---------+---------+/*  */+---------+---------+---------+---------+---------+
                                  &trans    &trans    /*  */ &trans    &trans
                               //================================================
