@@ -33,14 +33,17 @@
 #define L3(k1) &lt 3 k1
 #define CFG(k1) &lt 3 k1
 
-// Alt when hold,k1 when tap
+// alt/opt
 #define LAT(k1) &ht LALT k1
-// GUI when hold, k1 when tap
+#define RAT(k1) &ht RALT k1
+// Gui/cmd/win
 #define LGT(k1) &ht LGUI k1
-// shift when hold, k1 when tap
-#define ST(k1) &ht LSHFT k1
-// Ctrl when hold, k1 when tap
-#define CT(k1) &ht LCTRL k1
+// shift
+#define LST(k1) &ht LSHFT k1
+#define RST(k1) &ht RSHFT k1
+// ctrl
+#define LCT(k1) &ht LCTRL k1
+#define RCT(k1) &ht LCTRL k1
 // rgb
 #define UG(k1) &rgb_ug k1
 
@@ -67,25 +70,6 @@
 / {
     combos {
         compatible = "zmk,combos";
-        lock {
-            timeout-ms = <50>;
-            key-positions = <0 9 20 29>;
-            bindings = <&to 4>;
-        };
-        unlock {
-            timeout-ms = <50>;
-            key-positions = <1 8 21 28>;
-            bindings = <&to 0>;
-        };
-        combo_esc {
-            timeout-ms = <50>;
-            key-positions = <0 1>;
-            bindings = <&kp ESC>;
-        };
-        combo_sticky_gui {
-            bindings = <&sk LGUI>;
-            key-positions = <14 24>;
-        };
         combo_bspc {
             bindings = <&kp BACKSPACE>;
             key-positions = <3 4>;
@@ -154,13 +138,13 @@
         base {
             bindings = <
 //+---------+---------+---------+---------+---------+/*  */+---------+---------+---------+---------+---------+
-   LAT(Q)    &kp W     &kp E     &kp R     &kp T     /*  */ &kp Y     &kp U     &kp I     &kp O     &kp P
+   LAT(Q)    &kp W     &kp E     &kp R     &kp T     /*  */ &kp Y     &kp U     &kp I     &kp O     RAT(P)
 //+---------+---------+---------+---------+---------+/*  */+---------+---------+---------+---------+---------+
-   CT(A)     NAV(S)    &kp D     ST(F)     &kp G     /*  */ &kp H     ST(J)     &kp K     NUM(L)    CT(SEMI)
+   CT(A)     &kp S     &kp D     &kp F     &kp G     /*  */ &kp H     &kp J     &kp K     &kp L     RCT(ENTER)
 //+---------+---------+---------+---------+---------+/*  */+---------+---------+---------+---------+---------+
-   CFG(Z)    LGT(X)    &kp C     &kp V     &kp B     /*  */ &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH
+   LST(Z)    &kp X     &kp C     &kp V     &kp B     /*  */ &kp N     &kp M     &kp COMMA &kp DOT   &kp ENTER 
 //+---------+---------+---------+---------+---------+/*  */+---------+---------+---------+---------+---------+
-                                 ENTER     NUM(SPACE)/*  */ SYM(BSPC) LAT(TAB)
+                                 LGT(ESC)  NUM(SPACE)/*  */ SYM(BSPC) LST(TAB)
                               //================================================
             >;
         };

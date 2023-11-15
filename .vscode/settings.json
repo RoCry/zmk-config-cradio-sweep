@@ -1,3 +1,7 @@
 {
-    "git-blame.gitWebUrl": ""
+    "git-blame.gitWebUrl": "",
+    "files.associations": {
+        "*.keymap": "dts",
+        "*.dtsi": "c"
+    }
 }
