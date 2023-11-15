@@ -134,10 +134,10 @@
         command_key_macro: command_key_macro {
             label = "command_key_macro";
             compatible = "zmk,behavior-macro";
-            #binding-cells = <1>; // like index
+            #binding-cells = <1>; // 1 parameter
             bindings
                 = <&macro_press &kp RGUI>
-                , <&macro_param_1to1>, <&kp MACRO_PLACEHOLDER>
+                , <&macro_param_1to1>, <&macro_tap &kp MACRO_PLACEHOLDER>
                 , <&macro_release &kp RGUI>
                 ;
         };
