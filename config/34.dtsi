@@ -61,6 +61,10 @@
 / {
     combos {
         compatible = "zmk,combos";
+        combo_switch_input_method {
+            key-positions = <16 17>;
+            bindings = <&switch_input_method>;
+        };
         combo_bspc {
             bindings = <&kp BACKSPACE>;
             key-positions = <3 4>;
@@ -81,7 +85,7 @@
             key-positions = <13 16>;
         };
         combo_sticky_ctrl_shift {
-            bindings = <&sk LC(LSHFT)>;
+            bindings = <&sk LCT(LSHFT)>;
             key-positions = <10 20>;
         };
         combo_layer_3 {
@@ -115,6 +119,19 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp LG(GRAVE)>;
+        };
+    };
+
+    macros {
+        switch_input_method: switch_input_method {
+            label = "switch_input_method";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>; // like index
+            bindings
+                = <&macro_press &kp RGUI>
+                , <&macro_tap &kp SPACE>
+                , <&macro_release &kp RGUI>
+                ;
         };
     };
 
