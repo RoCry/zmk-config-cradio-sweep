@@ -43,17 +43,12 @@
 #define RST(k1) &ht RSHFT k1
 // ctrl
 #define LCT(k1) &ht LCTRL k1
-#define RCT(k1) &ht LCTRL k1
+#define RCT(k1) &ht RCTRL k1
 // rgb
 #define UG(k1) &rgb_ug k1
 
-// hold preferred makes it easier to trigger hold
-#define HOLD_PREFER_GUI(k1) &hp LGUI k1
-
 // Hold GUI + x key press
 #define HG(k1) &kp LG(k1)
-#define ENTER &hp LGUI RET
-
 #define BT(k1) &bt BT_SEL k1
 #define BTC &bt BT_CLR
 
@@ -140,9 +135,9 @@
 //+---------+---------+---------+---------+---------+/*  */+---------+---------+---------+---------+---------+
    LAT(Q)    &kp W     &kp E     &kp R     &kp T     /*  */ &kp Y     &kp U     &kp I     &kp O     RAT(P)
 //+---------+---------+---------+---------+---------+/*  */+---------+---------+---------+---------+---------+
-   CT(A)     &kp S     &kp D     &kp F     &kp G     /*  */ &kp H     &kp J     &kp K     &kp L     RCT(ENTER)
+   LCT(A)    &kp S     &kp D     &kp F     &kp G     /*  */ &kp H     &kp J     &kp K     &kp L     RCT(RET)
 //+---------+---------+---------+---------+---------+/*  */+---------+---------+---------+---------+---------+
-   LST(Z)    &kp X     &kp C     &kp V     &kp B     /*  */ &kp N     &kp M     &kp COMMA &kp DOT   &kp ENTER 
+   LST(Z)    &kp X     &kp C     &kp V     &kp B     /*  */ &kp N     &kp M     &kp COMMA &kp DOT   &kp RET
 //+---------+---------+---------+---------+---------+/*  */+---------+---------+---------+---------+---------+
                                  LGT(ESC)  NUM(SPACE)/*  */ SYM(BSPC) LST(TAB)
                               //================================================
