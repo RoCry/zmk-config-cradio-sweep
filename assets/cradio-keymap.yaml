@@ -28,13 +28,48 @@ layers:
   - B
   - N
   - M
-  - ','
-  - .
-  - RET
+  - LC(LA(LS(COMMA)))
+  - {t: ., h: numbers}
+  - LC(LA(LS(LG(RET))))
   - {t: ESC, h: LGUI}
   - {t: SPACE, h: numbers}
   - {t: BSPC, h: symbols}
   - {t: TAB, h: LSHFT}
+  numbers:
+  - TAB
+  - '1'
+  - '2'
+  - '3'
+  - '0'
+  - HOME
+  - PG DN
+  - PG UP
+  - END
+  - DEL
+  - LCTRL
+  - '4'
+  - '5'
+  - '6'
+  - '&command_key_macro TAB'
+  - LEFT
+  - DOWN
+  - UP
+  - RIGHT
+  - RCTRL
+  - LSHFT
+  - '7'
+  - '8'
+  - '9'
+  - '&command_key_macro GRAVE'
+  - '-'
+  - +
+  - '*'
+  - {t: /, type: held}
+  - RSHFT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   symbols:
   - '!'
   - '@'
@@ -44,66 +79,66 @@ layers:
   - ^
   - '&'
   - '*'
-  - ''
-  - ''
-  - '-'
-  - _
-  - '`'
-  - ''''
-  - '"'
-  - ':'
   - (
   - )
-  - '['
-  - ']'
+  - '-'
+  - _
+  - .
+  - '"'
   - \
   - '|'
-  - '~'
-  - '='
-  - +
   - '{'
   - '}'
-  - <
-  - '>'
-  - '?'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {type: held}
-  - {t: ▽, type: trans}
-  numbers:
-  - '1'
-  - '2'
-  - '3'
-  - '-'
-  - '*'
-  - HOME
-  - PG DN
-  - PG UP
-  - END
-  - ''
-  - '4'
-  - '5'
-  - '6'
+  - '['
+  - ']'
+  - '='
   - +
   - /
-  - LEFT
-  - DOWN
-  - UP
-  - RIGHT
-  - ''
-  - '7'
-  - '8'
-  - '9'
-  - '0'
-  - .
-  - ''
-  - LG(DOWN)
-  - LG(UP)
-  - ''
-  - ''
+  - '?'
+  - '`'
+  - '~'
+  - ;
+  - ':'
+  - {t: ▽, type: trans}
+  - func
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
+  func:
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - VOL DN
+  - VOL UP
+  - MUTE
+  - PP
+  - F13
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F14
+  - F15
+  - F11
+  - F12
+  - F16
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   config:
   - BT CLR
@@ -140,8 +175,9 @@ layers:
   - PSCRN
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  blank: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
 combos:
+- p: [16, 17]
+  k: '&command_key_macro SPACE'
 - p: [3, 4]
   k: BACKSPACE
 - p: [26, 27]
@@ -151,6 +187,6 @@ combos:
 - p: [13, 16]
   k: '&caps_word'
 - p: [10, 20]
-  k: {t: LC(LSHFT), h: sticky}
+  k: '&sk'
 - p: [0, 9]
-  k: config
+  k: func
