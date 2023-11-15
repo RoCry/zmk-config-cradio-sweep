@@ -71,7 +71,7 @@
         compatible = "zmk,combos";
         combo_switch_input_method {
             key-positions = <16 17>;
-            bindings = S_INPUT;
+            bindings = <S_INPUT>;
         };
         combo_bspc {
             bindings = <&kp BACKSPACE>;
