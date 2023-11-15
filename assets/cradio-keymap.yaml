@@ -28,9 +28,9 @@ layers:
   - B
   - N
   - M
-  - LC(LA(LS(COMMA)))
+  - {t: ',', h: LC(LA(LS))}
   - {t: ., h: numbers}
-  - LC(LA(LS(LG(RET))))
+  - {t: RET, h: LC(LA(LS(LG)))}
   - {t: ESC, h: LGUI}
   - {t: SPACE, h: numbers}
   - {t: BSPC, h: symbols}
