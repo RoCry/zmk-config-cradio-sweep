@@ -133,7 +133,7 @@
     macros {
         command_key_macro: command_key_macro {
             label = "command_key_macro";
-            compatible = "zmk,behavior-macro";
+            compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>; // 1 parameter
             bindings
                 = <&macro_press &kp RGUI>
