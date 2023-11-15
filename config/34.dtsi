@@ -46,6 +46,11 @@
 // rgb
 #define UG(k1) &rgb_ug k1
 
+#define S_APP &command_key_macro TAB
+#define S_CTX &command_key_macro GRAVE
+#define S_INPUT &command_key_macro SPACE 
+
+
 // Hold GUI + x key press
 #define HG(k1) &kp LG(k1)
 #define BT(k1) &bt BT_SEL k1
@@ -66,7 +71,7 @@
         compatible = "zmk,combos";
         combo_switch_input_method {
             key-positions = <16 17>;
-            bindings = <&switch_input_method>;
+            bindings = S_INPUT;
         };
         combo_bspc {
             bindings = <&kp BACKSPACE>;
@@ -126,33 +131,13 @@
     };
 
     macros {
-        switch_input_method: switch_input_method {
-            label = "switch_input_method";
+        command_key_macro: command_key_macro {
+            label = "command_key_macro";
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>; // like index
+            #binding-cells = <1>; // like index
             bindings
                 = <&macro_press &kp RGUI>
-                , <&macro_tap &kp SPACE>
-                , <&macro_release &kp RGUI>
-                ;
-        };
-        s_app: s_app {
-            label = "switch_app";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <1>;
-            bindings
-                = <&macro_press &kp RGUI>
-                , <&macro_tap &kp TAB>
-                , <&macro_release &kp RGUI>
-                ;
-        };
-        s_ctx: s_ctx {
-            label = "switch_context";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <2>;
-            bindings
-                = <&macro_press &kp RGUI>
-                , <&macro_tap &kp GRAVE>
+                , <&macro_param_1to1>, <&kp MACRO_PLACEHOLDER>
                 , <&macro_release &kp RGUI>
                 ;
         };
@@ -185,9 +170,9 @@
 //+---------+---------+---------+---------+---------+/*  */+---------+---------+---------+---------+---------+
    &kp TAB   &kp N1    &kp N2    &kp N3    &kp N0    /*  */ &kp HOME  &kp PG_DN &kp PG_UP &kp END    &kp DEL
 //+---------+---------+---------+---------+---------+/*  */+---------+---------+---------+---------+---------+
-   &kp LCTRL &kp N4    &kp N5    &kp N6    <&s_app>  /*  */ &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &kp RCTRL
+   &kp LCTRL &kp N4    &kp N5    &kp N6    S_APP     /*  */ &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &kp RCTRL
 //+---------+---------+---------+---------+---------+/*  */+---------+---------+---------+---------+---------+
-   &kp LSHFT &kp N7    &kp N8    &kp N9    <&s_ctx>  /*  */ &kp MINUS &kp PLUS  &kp STAR  &kp SLASH  &kp DOT
+   &kp LSHFT &kp N7    &kp N8    &kp N9    S_CTX     /*  */ &kp MINUS &kp PLUS  &kp STAR  &kp SLASH  &kp DOT
 //+---------+---------+---------+---------+---------+/*  */+---------+---------+---------+---------+---------+
                                  &trans    &trans    /*  */ &trans    &trans
                               //================================================
