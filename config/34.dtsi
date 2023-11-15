@@ -30,8 +30,8 @@
 #define FUNC(k1) &lt 3 k1
 #define CFG(k1) &lt 4 k1
 
-// TODO:
-// #define HYPER()
+#define HYPER(k1) &ht LCTRL LGUI LSHFT LALT k1
+#define MEH(k1) &ht LCTRL LSHFT LALT k1
 
 // alt/opt
 #define LAT(k1) &ht LALT k1
@@ -159,7 +159,7 @@
 //+---------+---------+---------+---------+---------+/*  */+---------+---------+---------+---------+---------+
    LCT(A)    &kp S     &kp D     &kp F     &kp G     /*  */ &kp H     &kp J     &kp K     &kp L     RCT(RET)
 //+---------+---------+---------+---------+---------+/*  */+---------+---------+---------+---------+---------+
-   LST(Z)    &kp X     &kp C     &kp V     &kp B     /*  */ &kp N     &kp M     &kp COMMA NUM(DOT)  &kp RET
+   LST(Z)    &kp X     &kp C     &kp V     &kp B     /*  */ &kp N     &kp M     MEH(COMMA) NUM(DOT) HYPER(RET)
 //+---------+---------+---------+---------+---------+/*  */+---------+---------+---------+---------+---------+
                                  LGT(ESC)  NUM(SPACE)/*  */ SYM(BSPC) LST(TAB)
                               //================================================
